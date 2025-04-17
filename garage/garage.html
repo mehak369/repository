@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conestoga Garage Sale</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="garage.css">
+</head>
+<body class="bg-info">
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar vh-100">
+                <div class="position-sticky">
+                    <h3 class="text-white text-center py-3">Menu</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#personal-info">Personal Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#buy-submit">Buy & Submit</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 col-lg-10 px-md-4">
+
+                <div class="container py-4" style="background-color: #1f4453d3;">
+                    <h1 class="text-center text-warning">Conestoga Garage Sale</h1>
+                    <h2 class="text-center text-secondary">Raising Money for The Frontline Fund</h2>
+
+                    <div class="marquee-container">
+                        <p class="marquee-text">
+                            Every purchase helps support <b>The Frontline Fund</b>. Your generosity can make a difference in someone's life!
+                        </p>
+                    </div>
+
+                    <div id="about" class="card p-4 shadow mt-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h3 class="text-primary">What is The Frontline Fund?</h3>
+                                <p>The Frontline Fund supports healthcare workers and essential services.</p>
+
+                                <h3 class="text-primary">Why is it important?</h3>
+                                <p>It provides protective equipment, mental health support, and medical research funding.</p>
+
+                                <h3 class="text-primary">Who are we?</h3>
+                                <p>We are Conestoga College volunteers organizing this charity sale.</p>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <img src="health.jpg" alt="Frontline Workers" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="personal-info" class="card p-4 shadow mt-4">
+                        <h3 class="text-primary text-center">Personal Information</h3>
+                        <form name="myform" method="POST" id="purchaseForm">
+
+                            <div class="mb-3 d-flex justify-content-center">
+                                <label class="form-label">Name</label>
+                                <input id="name" placeholder="Enter your name" type="text" class="form-control" name="name" required>
+                            </div>
+
+                            <div class="mb-3 d-flex justify-content-center">
+                                <label class="form-label">Email</label>
+                                <input id="email" placeholder="email@gmail.com" type="email" class="form-control" name="email" required>
+                            </div>
+
+                            <div class="mb-3 d-flex justify-content-center">
+                                <label class="form-label">Credit Card Number</label>
+                                <input id="CreditCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" type="text" pattern="\d{4}-\d{4}-\d{4}-\d{4}" class="form-control" name="creditCardNumber" required>
+                            </div>
+
+                            <div class="mb-3 d-flex justify-content-center">
+                                <label class="form-label">Credit Card Expiry Month</label>
+                                <input id="CreditCardExpiryMonth" placeholder="MMM (e.g., Jan)" pattern="[A-Za-z]{3}" class="form-control" name="expiryMonth" required>
+                            </div>
+
+                            <div class="mb-3 d-flex justify-content-center">
+                                <label class="form-label">Credit Card Expiry Year</label>
+                                <input id="CreditCardExpiryYear" placeholder="YYYY" type="text" pattern="\d{4}" class="form-control" name="expiryYear" required>
+                            </div>
+                        
+                    </div>
+
+                    <div id="buy-submit" class="card p-4 shadow mt-4">
+                        <h3 class="text-primary mt-4 text-center">Buy Generously</h3>
+                    
+                        
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Image</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Donuts</td>
+                                            <td><img src="donuts.jpg" alt="Delicious Donuts" class="img-fluid" width="100"></td>
+                                            <td>$5</td>
+                                            <td><input type="number" id="donutQty" name="donutQty" class="form-control" min="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chocolate</td>
+                                            <td><img src="chocolate.jpeg" alt="Tasty Chocolate" class="img-fluid" width="100"></td>
+                                            <td>$15</td>
+                                            <td><input type="number" id="chocolateQty" name="chocolateQty" class="form-control" min="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Water Bottle</td>
+                                            <td><img src="water.jpeg" alt="Water Bottle" class="img-fluid" width="100"></td>
+                                            <td>$10</td>
+                                            <td><input type="number" id="waterQty" name="waterQty" class="form-control" min="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pen</td>
+                                            <td><img src="pen.jpg" alt="Writing Pen" class="img-fluid" width="100"></td>
+                                            <td>$2</td>
+                                            <td><input type="number" id="penQty" name="penQty" class="form-control" min="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Juice</td>
+                                            <td><img src="juice.jpeg" alt="Refreshing Juice" class="img-fluid" width="100"></td>
+                                            <td>$20</td>
+                                            <td><input type="number" id="juiceQty" name="juiceQty" class="form-control" min="0"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    
+                            <!-- Submit button is now inside the form -->
+                            <button type="submit" class="btn btn-success w-100 mt-3">Submit</button>
+                            <p id="errors" class="text-danger mt-3"></p>
+                        </form>
+                    </div>
+                    
+                    <!-- Receipt display section -->
+                    <div class="alert alert-success mt-4 text-center" id="formResult">
+                        Thank you for your support! Your contribution helps us make a difference.
+                    </div>
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("purchaseForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+    
+                let errors = [];
+                let name = document.getElementById("name").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let creditCard = document.getElementById("CreditCardNumber").value.trim();
+                let expiryMonth = document.getElementById("CreditCardExpiryMonth").value.trim();
+                let expiryYear = document.getElementById("CreditCardExpiryYear").value.trim();
+                let quantities = document.querySelectorAll("input[type='number']");
+    
+                document.getElementById("errors").innerHTML = "";
+    
+                if (!name) errors.push("Name is required.");
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Valid email is required.");
+                if (!/^\d{4}-\d{4}-\d{4}-\d{4}$/.test(creditCard)) errors.push("Invalid credit card format. Use XXXX-XXXX-XXXX-XXXX.");
+                if (!/^[A-Za-z]{3}$/.test(expiryMonth)) errors.push("Invalid expiry month format. Use MMM (e.g., JAN).");
+                if (!/^\d{4}$/.test(expiryYear)) errors.push("Invalid expiry year format. Use YYYY.");
+    
+                let totalAmount = 0;
+                let atLeastOneItem = false;
+                let prices = [5, 15, 10, 2, 20];
+                let itemNames = ["Donuts", "Chocolate", "Water Bottle", "Pen", "Juice"];
+                let purchasedItems = [];
+    
+                quantities.forEach((input, index) => {
+                    let value = parseInt(input.value) || 0;
+                    if (value > 0) {
+                        atLeastOneItem = true;
+                        let itemTotal = value * prices[index];
+                        totalAmount += itemTotal;
+                        purchasedItems.push(`${value} x ${itemNames[index]} ($${prices[index]} each) = $${itemTotal}`);
+                    }
+                });
+    
+                if (!atLeastOneItem) errors.push("At least one item must be purchased.");
+    
+                if (errors.length > 0) {
+                    document.getElementById("errors").innerHTML = errors.map(err => `<p>${err}</p>`).join('');
+                    return;
+                }
+    
+                let donation = Math.max(10, totalAmount * 0.1);
+                let totalCost = totalAmount + donation;
+    
+                document.getElementById("formResult").innerHTML = `
+                    <h3>Receipt</h3>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Credit Card:</strong> ****-****-****-${creditCard.slice(-4)}</p>
+                    <p><strong>Items Purchased:</strong></p>
+                    <ul>${purchasedItems.map(item => `<li>${item}</li>`).join('')}</ul>
+                    <p><strong>Total Purchase Amount:</strong> $${totalAmount.toFixed(2)}</p>
+                    <p><strong>Donation Amount:</strong> $${donation.toFixed(2)}</p>
+                    <p><strong>Total Cost:</strong> $${totalCost.toFixed(2)}</p>
+                `;
+            });
+        });
+    </script>
+    
+</body>
+</html>

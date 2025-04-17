@@ -1,0 +1,42 @@
+body{
+    background-color: blanchedalmond;
+}
+.container {
+    display: flex;  /* Aligns columns side by side */
+    justify-content: space-between;  /* Distributes columns evenly */
+    background-color: rgb(218, 167, 126);
+}
+
+/* Common styles for all columns */
+.column {
+    flex: 1; /* Makes all columns take equal width */
+    padding: 20px;
+    margin: 0 10px;
+    
+    text-align: center;
+    color: white; /* Ensures text is visible */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    border: 5px solid; /* Thickness, Style, and Color */
+    border-radius: 10px;
+}
+/* Specific styles for each column */
+.left-column {
+    background-color: rgb(146, 106, 79); 
+    
+}
+
+.mid-column {
+    background-color: rgb(119, 64, 27);
+     /* Adjusting text color */
+    
+}
+
+.right-column {
+    background-color: rgb(146, 106, 79); 
+    
+    
+}
+
+
